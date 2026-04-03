@@ -1,0 +1,267 @@
+/* Results.css */
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.results-section {
+  background: var(--bg-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.results-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 15% 50%, rgba(26, 86, 219, 0.03) 0%, transparent 25%),
+                    radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.03) 0%, transparent 25%);
+  pointer-events: none;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.result-category {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.category-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 2.5rem;
+  line-height: 1.3;
+}
+
+.gold-text {
+  color: #cda434;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.blue-text {
+  color: var(--primary);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.students-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.top-rankers {
+  margin-bottom: 3rem;
+}
+
+.others {
+  gap: 1.5rem;
+}
+
+/* Student Cards */
+.student-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: var(--radius-lg);
+  width: 260px;
+}
+
+.student-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
+}
+
+.avatar-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.student-avatar,
+.student-avatar-inline {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  margin: 0 auto;
+}
+
+.gold-avatar {
+  background: linear-gradient(135deg, #fff9e6 0%, #fef08a 100%);
+  color: #a16207;
+}
+
+.blue-avatar {
+  background: linear-gradient(135deg, #eff6ff 0%, #bfdbfe 100%);
+  color: #1d4ed8;
+}
+
+.rank-badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: var(--shadow-md);
+  z-index: 2;
+}
+
+.gold-badge {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.blue-badge {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.student-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.percentage-ribbon {
+  background: #e11d48;
+  color: white;
+  padding: 8px 24px;
+  font-weight: 800;
+  font-size: 1.3rem;
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+  margin-top: 0.5rem;
+}
+
+.percentage-value {
+  color: #e11d48;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gold-theme {
+  border: 2px solid rgba(205, 164, 52, 0.2);
+  background: linear-gradient(to bottom, #fff, #fff9e6);
+}
+.gold-theme .student-avatar,
+.gold-theme .student-avatar-inline {
+  border-color: #cda434;
+}
+
+.blue-theme {
+  border: 2px solid rgba(26, 86, 219, 0.1);
+  background: linear-gradient(to bottom, #fff, #f0f5ff);
+}
+.blue-theme .student-avatar,
+.blue-theme .student-avatar-inline {
+  border-color: var(--primary);
+}
+
+/* Small Cards for Others */
+.small-card {
+  flex-direction: row;
+  width: 220px;
+  padding: 1rem;
+  gap: 1rem;
+  background: white;
+  border: 1px solid var(--border);
+}
+
+.student-avatar-small,
+.student-avatar-small-inline {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: var(--bg);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.student-info {
+  text-align: left;
+}
+
+.student-name-small {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.percentage-small {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #e11d48;
+}
+
+.congrats-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--border);
+}
+
+@media (max-width: 768px) {
+  .result-category {
+    padding: 2rem 1rem;
+  }
+  .student-card {
+    width: 100%;
+    max-width: 280px;
+  }
+  .small-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}
