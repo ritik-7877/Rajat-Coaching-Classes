@@ -14,7 +14,7 @@ const Results = () => {
 
   const class12Results = [
     { name: "Sahista Mansuri", percentage: "90.00%", rank: "1st", photo: "/sahishta-mansuri.jpg" },
-    { name: "Akanksha Joshi", percentage: "85.40%", rank: "2nd", photo: "/akanksha-joshi.jpg", rotate: -90 },
+    { name: "Akanksha Joshi", percentage: "85.40%", rank: "2nd", photo: "/akanksha-joshi.jpg" },
   ];
 
   const getInitials = (name) => {
