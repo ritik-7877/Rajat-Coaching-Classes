@@ -3,18 +3,18 @@ import './Results.css';
 
 const Results = () => {
   const class10Results = [
-    { name: "Pallavi Sharma", percentage: "93.67%", rank: "1st" },
-    { name: "Harshit Acharya", percentage: "83.50%", rank: "2nd" },
-    { name: "Chestha Sharma", percentage: "78.17%", rank: "3rd" },
-    { name: "Gayatri Purbiya", percentage: "73.50%" },
-    { name: "Khushi Acharya", percentage: "72.83%" },
-    { name: "Taniksha Bhati", percentage: "72.67%" },
-    { name: "Khushboo Sharma", percentage: "70.83%" },
+    { name: "Pallavi Sharma", percentage: "93.67%", rank: "1st", photo: "/pallavi-sharma.jpg" },
+    { name: "Harshit Acharya", percentage: "83.50%", rank: "2nd", photo: "/harshit-acharya.jpg" },
+    { name: "Chestha Sharma", percentage: "78.17%", rank: "3rd", photo: "/chestha-sharma.jpg" },
+    { name: "Gayatri Purbiya", percentage: "73.50%", photo: "/gayatri-purbiya.jpg" },
+    { name: "Khushi Acharya", percentage: "72.83%", photo: "/khushi-acharya.jpg" },
+    { name: "Taniksha Bhati", percentage: "72.67%", photo: "/taniksha-bhati.jpg" },
+    { name: "Khushboo Sharma", percentage: "70.83%", photo: "/khushboo-sharma.jpg" },
   ];
 
   const class12Results = [
-    { name: "Sahista Mansuri", percentage: "90.00%", rank: "1st" },
-    { name: "Akanksha Joshi", percentage: "85.40%", rank: "2nd" },
+    { name: "Sahista Mansuri", percentage: "90.00%", rank: "1st", photo: "/sahishta-mansuri.jpg" },
+    { name: "Akanksha Joshi", percentage: "85.40%", rank: "2nd", photo: "/akanksha-joshi.jpg", rotate: -90 },
   ];
 
   const getInitials = (name) => {
@@ -44,9 +44,18 @@ const Results = () => {
               {class12Results.map((student, index) => (
                 <div className="student-card gold-theme" key={index}>
                   <div className="avatar-container">
-                    <div className="student-avatar-inline gold-avatar">
-                      {getInitials(student.name)}
-                    </div>
+                    {student.photo ? (
+                      <img
+                        src={student.photo}
+                        alt={student.name}
+                        className="student-photo gold-photo"
+                        style={student.rotate ? { transform: `rotate(${student.rotate}deg) scale(1.3)` } : undefined}
+                      />
+                    ) : (
+                      <div className="student-avatar-inline gold-avatar">
+                        {getInitials(student.name)}
+                      </div>
+                    )}
                     {student.rank && <div className="rank-badge gold-badge">{student.rank}</div>}
                   </div>
                   <h4 className="student-name">{student.name}</h4>
@@ -68,9 +77,17 @@ const Results = () => {
               {class10Results.slice(0, 3).map((student, index) => (
                 <div className="student-card blue-theme" key={index}>
                   <div className="avatar-container">
-                    <div className="student-avatar-inline blue-avatar">
-                      {getInitials(student.name)}
-                    </div>
+                    {student.photo ? (
+                      <img
+                        src={student.photo}
+                        alt={student.name}
+                        className="student-photo blue-photo"
+                      />
+                    ) : (
+                      <div className="student-avatar-inline blue-avatar">
+                        {getInitials(student.name)}
+                      </div>
+                    )}
                     {student.rank && <div className="rank-badge blue-badge">{student.rank}</div>}
                   </div>
                   <h4 className="student-name">{student.name}</h4>
@@ -83,9 +100,17 @@ const Results = () => {
             <div className="students-grid others">
               {class10Results.slice(3).map((student, index) => (
                 <div className="student-card small-card" key={index}>
-                  <div className="student-avatar-small-inline">
-                    {getInitials(student.name)}
-                  </div>
+                  {student.photo ? (
+                    <img 
+                      src={student.photo} 
+                      alt={student.name} 
+                      className="student-photo-small" 
+                    />
+                  ) : (
+                    <div className="student-avatar-small-inline">
+                      {getInitials(student.name)}
+                    </div>
+                  )}
                   <div className="student-info">
                     <h5 className="student-name-small">{student.name}</h5>
                     <span className="percentage-small">{student.percentage}</span>
