@@ -52,11 +52,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Auth Buttons */}
-          <div className="navbar-actions">
-            <button className="btn-login" id="btn-login">Login</button>
-            <button className="btn-register" id="btn-register">Register</button>
-          </div>
 
           {/* Hamburger */}
           <button
@@ -82,14 +77,7 @@ const Navbar = () => {
             {link.label}
           </a>
         ))}
-        <div className="mobile-menu-actions">
-          <button className="btn-login" style={{ flex: 1, padding: '12px', borderRadius: '10px', fontWeight: 600, fontSize: '15px', border: '2px solid var(--primary)', color: 'var(--primary)', background: 'transparent', cursor: 'pointer' }}>
-            Login
-          </button>
-          <button className="btn-register" style={{ flex: 1, padding: '12px', borderRadius: '10px', fontWeight: 600, fontSize: '15px', background: 'linear-gradient(135deg, var(--primary), var(--primary-light))', color: 'white', cursor: 'pointer' }}>
-            Register
-          </button>
-        </div>
+
       </div>
     </>
   );

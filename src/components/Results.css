@@ -21,6 +21,77 @@
   pointer-events: none;
 }
 
+/* ==================== BATCH TABS ==================== */
+.batch-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.batch-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--bg);
+  color: var(--text-medium);
+  border: 2px solid transparent;
+  transition: var(--transition);
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.batch-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(26, 86, 219, 0.05);
+}
+
+.batch-tab.active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  box-shadow: 0 4px 20px rgba(26, 86, 219, 0.35);
+  border-color: transparent;
+}
+
+.batch-tab-icon {
+  font-size: 18px;
+}
+
+/* ==================== BATCH SESSION HEADER ==================== */
+.batch-session-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.session-year-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #fff7ed, #fed7aa);
+  color: #c2410c;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: 2px solid rgba(194, 65, 12, 0.15);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==================== ANIMATION ==================== */
+.animate-batch {
+  animation: fadeInBatch 0.4s ease forwards;
+}
+
+@keyframes fadeInBatch {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== RESULTS CONTAINER ==================== */
 .results-container {
   display: flex;
   flex-direction: column;
@@ -61,6 +132,13 @@
   letter-spacing: 1px;
 }
 
+.green-text {
+  color: #059669;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .students-grid {
   display: flex;
   flex-wrap: wrap;
@@ -76,7 +154,7 @@
   gap: 1.5rem;
 }
 
-/* Student Cards */
+/* ==================== STUDENT CARDS ==================== */
 .student-card {
   display: flex;
   flex-direction: column;
@@ -168,6 +246,10 @@
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
 }
 
+.green-badge {
+  background: linear-gradient(135deg, #059669 0%, #34d399 100%);
+}
+
 .student-name {
   font-family: 'Poppins', sans-serif;
   font-size: 1.2rem;
@@ -194,6 +276,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* ==================== THEMES ==================== */
 .gold-theme {
   border: 2px solid rgba(205, 164, 52, 0.2);
   background: linear-gradient(to bottom, #fff, #fff9e6);
@@ -212,13 +295,28 @@
   border-color: var(--primary);
 }
 
+.green-theme {
+  border: 2px solid rgba(5, 150, 105, 0.15);
+  background: linear-gradient(to bottom, #fff, #ecfdf5);
+}
+.green-theme .student-avatar,
+.green-theme .student-avatar-inline {
+  border-color: #059669;
+}
+
 .blue-photo {
   border-color: var(--primary);
   box-shadow: 0 6px 24px rgba(26, 86, 219, 0.25);
   background: #eff6ff;
 }
 
-/* Small Cards for Others */
+.green-photo {
+  border-color: #059669;
+  box-shadow: 0 6px 24px rgba(5, 150, 105, 0.25);
+  background: #ecfdf5;
+}
+
+/* ==================== SMALL CARDS ==================== */
 .small-card {
   flex-direction: row;
   width: 220px;
@@ -238,7 +336,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   background: var(--bg);
   color: var(--primary);
@@ -282,6 +380,7 @@
   border-top: 1px dashed var(--border);
 }
 
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .result-category {
     padding: 2rem 1rem;
@@ -293,5 +392,12 @@
   .small-card {
     width: 100%;
     max-width: 280px;
+  }
+  .batch-tabs {
+    gap: 8px;
+  }
+  .batch-tab {
+    padding: 10px 20px;
+    font-size: 13px;
   }
 }

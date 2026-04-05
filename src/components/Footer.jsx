@@ -121,7 +121,7 @@ const Footer = () => {
               <span className="contact-icon">✉️</span>
               <div className="contact-text">
                 <strong>Email</strong>
-                <a href="mailto:rajatcoachingclasses@gmail.com" style={{ color: '#94a3b8' }}>rajatcoachingclasses@gmail.com</a>
+                <a href="mailto:rajatcoachingclassesgng@gmail.com" style={{ color: '#94a3b8' }}>rajatcoachingclassesgng@gmail.com</a>
               </div>
             </div>
 
